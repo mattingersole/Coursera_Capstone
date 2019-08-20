@@ -1,0 +1,150 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Capstone Project - Final Report"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Introduction/Business Problem"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Cafes have become incredibly popular in Australia in recent years. Cafe Help is a Coffee Shop Supplies & Repairs business based in Melbourne Australia. Cafe Help provides Cafes with supplies (eg. beans, milk, cups) and repairs (eg. machine and fridge). It is crucially important that Cafe Help is within short proximity of local cafes. \n",
+    "\n",
+    "Cafe Help has decided to expand to Sydney, Australia and would like to start with three service locations. My capstone project will look to recommend the three best locations for Cafe Help to begin operations in Sydney. \n",
+    "\n",
+    "This study is explicitly targeted to the management of Cafe Help, however it would also be of interest to other Coffee Shop Supplies & Repairs businesses."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Cafe Help wants to be within close proximity of local cafes in Sydney. We will therefore use FourSquare data to build a cafe database in the Sydney region. We will then look to analyse cafe density in the Sydney region. We may put an emphasis on the most popular cafes in the region as these cafes need more supplies and repairs. Finally we will look to build clusters to determine our recommended three locations.\n",
+    "\n",
+    "Foursquare’s Search endpoint will allow us to build up such a database of cafes in the Sydney region. The Likes, Explore and Trending endpoints will allow us to focus on cafes that are more popular. Jupyter Notebooks, Python 3, Pandas will allow us to wrangle, analyse this data. K-means Clustering will allow us to develop density-based clusters. Folium will allow us to present our findings back to the main stakeholders in a way that tells the story.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Methodology"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "##### Tools\n",
+    "We performed our analysis in a Jupyter Notebook which is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. We used the Python 3 language as well as various other data science tools and libraries such as Pandas, Numpy, MatPlotLib, SciKitLearn and Folium.\n",
+    "\n",
+    "##### Dataset\n",
+    "We built a dataset of all cafes inside the Sydney CBD through the FourSquare API which provides location based information about venues. We discovered early that only 50 results can be obtained per API call and had to build a grid of geo-locational points within our query area and make an API call for each point. We then used FourSquare's Search endpoint to return the cafes around each point in our, building a dataset of all cafes inside the Sydney CBD. \n",
+    "\n",
+    "##### Data Wrangling\n",
+    "We converted our dataset into a Pandas dataframe and set to work cleaning the data. We removed un-needed columns and removed duplicate cafes from the data. We performed basic analysis on this information.\n",
+    "\n",
+    "##### Visualise Data\n",
+    "We used Folium to plot our cafes onto a map of the Sydney CBD. From this map we were able to quickly visualise where the cafes were located and gain further insights into our dataset.\n",
+    "\n",
+    "##### Cluster Data\n",
+    "We used K-means Clustering which is an unsupervised machine learning algorithm used for clustering data points. K-means was able to cluster our cafes dataset into three separate clusters. We then used Folium to visualise these clusters on a map of the Sydney CBD for story-telling. Finally, we identified the centre of these clusters and put these locations forward as the recommended new stores for Cafe Help. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Results"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "- We obtained a list of all cafes that exist within the Sydney CBD.\n",
+    "- We learned that 1561 cafes exist within the Sydney CBD. \n",
+    "- We learned the names and locations of all cafes within the Sydney CBD. \n",
+    "- We were able to visualise all cafes within the Sydney CBD on a map.\n",
+    "- We were able to split all cafes in the Sydney CBD into three clusters.\n",
+    "- We were able to identify the centre of our three cafe clusters being:\n",
+    "    - Wynyard\n",
+    "    - Haymarket\n",
+    "    - Darlinghurst"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Discussion"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "It was interesting to uncover that 1561 cafes exist in Sydney's CBD. It was equally as interesting to visualise the locations of these cafes, with cafes in less dense areas scattered primarily around main arterial roads. The unsupervised machine learning algorithm, K-Means, was apparently able to automatically cluster"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Conclusion"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "This project aimed to recommend the three best locations for Cafe Help to begin operations in Sydney. With it being crucially important that Cafe Help be within short proximity of local cafes, we first identified the locations of all cafes in Sydney, before using machine learning to cluster them into three groups. We were able to successfully create three clusters of cafes in Sydney and recommend the three best locations for Cafe Help's new stores being Wynyard, Haymarket and Darlinghurst."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python",
+   "language": "python",
+   "name": "conda-env-python-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
